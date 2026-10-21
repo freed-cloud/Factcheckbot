@@ -1,0 +1,41 @@
+// Instellingen voor Cloudflare Workers.
+// Geheimen (sleutels en tokens) horen hier NIET in: die zet je bij Cloudflare onder
+// Worker > Settings > Variables and Secrets. Zie de README.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+
+  // Moet precies gelijk zijn aan de naam van de Worker in Cloudflare.
+  "name": "factcheckbot",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-10-19",
+
+  // Logs bewaren, zodat je ze in het dashboard kunt bekijken.
+  "observability": {
+    "enabled": true
+  },
+
+  // Instellingen die je zelf mag aanpassen.
+  "vars": {
+    // Hoe grondig Perplexity zoekt: "fast" (snelst) of "low" (iets grondiger).
+    // Krijg je vaak het bericht dat het checken te lang duurde? Zet dit dan op "fast".
+    "PERPLEXITY_PRESET": "low",
+    // Versie van de WhatsApp Cloud API (Graph API) van Meta.
+    "GRAPH_API_VERSION": "v26.0"
+  },
+
+  // Kleine opslag die dubbel bezorgde berichten herkent. Cloudflare maakt die zelf aan.
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "SEEN_MESSAGES",
+        "class_name": "SeenMessages"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["SeenMessages"]
+    }
+  ]
+}

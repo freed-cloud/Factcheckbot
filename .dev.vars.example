@@ -1,0 +1,21 @@
+# Voorbeeld van de vijf geheimen, zonder echte waarden.
+#
+# Online zet je de echte waarden bij Cloudflare: Worker > Settings > Variables and Secrets.
+# Alleen als je de bot op een computer wilt testen met `npm run dev`:
+# kopieer dit bestand naar .dev.vars en vul daar de waarden in.
+# .dev.vars gaat nooit mee naar GitHub.
+
+# Vaste token van je systeemgebruiker bij Meta
+WHATSAPP_TOKEN=
+
+# Phone number ID uit WhatsApp > API Setup (een getal, niet je telefoonnummer)
+WHATSAPP_PHONE_NUMBER_ID=
+
+# Zelfbedachte lange zin; dezelfde vul je in bij Meta onder WhatsApp > Configuration
+WHATSAPP_VERIFY_TOKEN=
+
+# App-secret uit App settings > Basic in je Meta-app
+META_APP_SECRET=
+
+# API-sleutel uit je Perplexity-account
+PERPLEXITY_API_KEY=
