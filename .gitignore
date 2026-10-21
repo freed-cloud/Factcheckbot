@@ -1,0 +1,11 @@
+node_modules/
+.wrangler/
+dist/
+coverage/
+
+# Echte geheimen nooit in GitHub
+.dev.vars
+.dev.vars.*
+!.dev.vars.example
+.env
+.env.*
