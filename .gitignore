@@ -1,0 +1,23 @@
+# Geheimen: nooit committen
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+secrets/
+credentials*.json
+
+# Afhankelijkheden en build
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+dist/
+
+# Logbestanden (kunnen telefoonnummers bevatten)
+*.log
+logs/
+
+# Systeem
+.DS_Store
+Thumbs.db
